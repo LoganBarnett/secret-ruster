@@ -1,0 +1,71 @@
+#+title:     Secret Ruster
+#+author:    Logan Barnett
+#+email:     logustus@gmail.com
+#+date:      <2026-01-08 Thu>
+#+language:  en
+#+file_tags:
+#+tags:
+
+Interact with Secret Server's API for Rust.
+
+Maybe we'll make a CLI for it some day as well.
+
+See [[./secret-server-api/README.md]] for the bindings documentation, which has been
+generated via [[https://github.com/OpenAPITools/openapi-generator][openapi-generator-cli]].
+
+* Maintenance
+** Prerequisites
+
+You need installed:
+1. Nix.
+
+Then enter a dev shell with ~nix develop~ or ~direnv allow~ if you have ~direnv~
+and ~nix-direnv~.
+
+Otherwise, you'll need to install a bunch of stuff by hand:
+1. ~dprint~.
+2. GNU ~find~ (BSD ~find~ might work, but no promises).
+3. ~just~.
+4. ~jq~.
+5. ~openapi-generator-cli~.
+6. ~rust~, ~cargo~, etc.
+
+See [[file:./flake.nix]] for justifications about all of these tools.
+
+** Updating the Spec
+
+If the spec is ever updated on the Secret Server side, you can update it thusly:
+
+#+begin_src sh :results none :exports code
+just swagger-vendor $base_url $password_cmd $domain [$username]
+#+end_src
+
+Where you fill in all of those variables.
+
+Notably, ~password_cmd~ is a command line invocation that produces a password in
+~stdout~.  In the simplest, insecure case, you could use ~printf '%s'
+'2cool4u'~.
+
+~username~ defaults to ~$USER~.
+
+Unfortunately there is no public location for Secret Server to get the spec.
+You'll have to point it at your instance and use credentials, as stated above.
+
+Once the spec is updated, you'll need to regenerate the bindings code.  See
+[[Regenerating Bindings]] for how to do that.
+
+** Regenerating Bindings
+
+To regenerate the bindings:
+
+#+begin_src sh :results none :exports code
+just codegen
+#+end_src
+
+Of note: I don't know if this tool will actively remove files that are no longer
+needed.  I doubt it will.  Care should be taken here, or we should just modify
+the ~codegen~ task to remove ~secret-server-api~ before proceeding.
+
+There is some post processing that is done to achieve sensible formatting,
+fixing the spec, and also fixing the generated code (there are problems
+independently with both generated code and the spec).

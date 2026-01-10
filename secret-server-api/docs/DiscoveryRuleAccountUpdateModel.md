@@ -1,0 +1,43 @@
+# DiscoveryRuleAccountUpdateModel
+
+## Properties
+
+| Name                                                | Type                                                                                                                                                       | Description | Notes      |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **account_alerts**                                  | Option<[**models::UpdateFieldValueOfBoolean**](UpdateFieldValueOfBoolean.md)>                                                                              |             | [optional] |
+| **account_name_contains**                           | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **action_create_secrets**                           | Option<[**models::UpdateFieldValueOfBoolean**](UpdateFieldValueOfBoolean.md)>                                                                              |             | [optional] |
+| **computer_name_contains**                          | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **current_passphrase**                              | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **current_password**                                | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **current_private_key**                             | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **discovery_source_id**                             | Option<[**models::UpdateFieldValueOfOptionalInt32**](UpdateFieldValueOfOptionalInt32.md)>                                                                  |             | [optional] |
+| **filter_fields**                                   | Option<[**models::UpdateFieldValueOfDiscoveryRuleScanItemFilterLeftSquareBracketRightSquareBracket**](UpdateFieldValueOfDiscoveryRuleScanItemFilter[].md)> |             | [optional] |
+| **folder_id**                                       | Option<[**models::UpdateFieldValueOfOptionalInt32**](UpdateFieldValueOfOptionalInt32.md)>                                                                  |             | [optional] |
+| **import_only_polled_last_scan**                    | Option<[**models::UpdateFieldValueOfBoolean**](UpdateFieldValueOfBoolean.md)>                                                                              |             | [optional] |
+| **include_child_ous**                               | Option<[**models::UpdateFieldValueOfBoolean**](UpdateFieldValueOfBoolean.md)>                                                                              |             | [optional] |
+| **is_active**                                       | Option<[**models::UpdateFieldValueOfBoolean**](UpdateFieldValueOfBoolean.md)>                                                                              |             | [optional] |
+| **matching_condition**                              | Option<[**models::UpdateFieldValueOfMatchingConditionEnum**](UpdateFieldValueOfMatchingConditionEnum.md)>                                                  |             | [optional] |
+| **new_password**                                    | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **operating_system_contains**                       | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **organization_unit_id**                            | Option<[**models::UpdateFieldValueOfOptionalInt32**](UpdateFieldValueOfOptionalInt32.md)>                                                                  |             | [optional] |
+| **password_changing_privileged_account_secret_ids** | Option<[**models::UpdateFieldValueOfInt32LeftSquareBracketRightSquareBracket**](UpdateFieldValueOfInt32[].md)>                                             |             | [optional] |
+| **password_changing_type**                          | Option<[**models::UpdateFieldValueOfPasswordChangingTypeEnum**](UpdateFieldValueOfPasswordChangingTypeEnum.md)>                                            |             | [optional] |
+| **password_option**                                 | Option<[**models::UpdateFieldValueOfPasswordOptionEnum**](UpdateFieldValueOfPasswordOptionEnum.md)>                                                        |             | [optional] |
+| **rule_description**                                | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **rule_name**                                       | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **scan_template_id**                                | Option<[**models::UpdateFieldValueOfInt32**](UpdateFieldValueOfInt32.md)>                                                                                  |             | [optional] |
+| **secret_name_pattern**                             | Option<[**models::UpdateFieldValueOfString**](UpdateFieldValueOfString.md)>                                                                                |             | [optional] |
+| **secret_permissions**                              | Option<[**models::UpdateFieldValueOfSecretPermissionEnum**](UpdateFieldValueOfSecretPermissionEnum.md)>                                                    |             | [optional] |
+| **secret_template_id**                              | Option<[**models::UpdateFieldValueOfOptionalInt32**](UpdateFieldValueOfOptionalInt32.md)>                                                                  |             | [optional] |
+| **site_id**                                         | Option<[**models::UpdateFieldValueOfInt32**](UpdateFieldValueOfInt32.md)>                                                                                  |             | [optional] |
+| **subscribed_specific_group_ids**                   | Option<[**models::UpdateFieldValueOfInt32LeftSquareBracketRightSquareBracket**](UpdateFieldValueOfInt32[].md)>                                             |             | [optional] |
+| **subscriber_type**                                 | Option<[**models::UpdateFieldValueOfSubscriberTypeEnum**](UpdateFieldValueOfSubscriberTypeEnum.md)>                                                        |             | [optional] |
+| **take_over_account_type**                          | Option<[**models::UpdateFieldValueOfTakeOverAccountTypeEnum**](UpdateFieldValueOfTakeOverAccountTypeEnum.md)>                                              |             | [optional] |
+| **take_over_password_type_id**                      | Option<[**models::UpdateFieldValueOfOptionalInt32**](UpdateFieldValueOfOptionalInt32.md)>                                                                  |             | [optional] |
+| **takeover_secret_ids**                             | Option<[**models::UpdateFieldValueOfInt32LeftSquareBracketRightSquareBracket**](UpdateFieldValueOfInt32[].md)>                                             |             | [optional] |
+| **take_over_threshold**                             | Option<[**models::UpdateFieldValueOfInt32**](UpdateFieldValueOfInt32.md)>                                                                                  |             | [optional] |
+
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)

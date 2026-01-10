@@ -1,0 +1,16 @@
+# PlatformDataMigrationStatus
+
+## Enum Variants
+
+| Name             | Value            |
+| ---------------- | ---------------- |
+| Pending          | Pending          |
+| Complete         | Complete         |
+| Error            | Error            |
+| ProcessingGroups | ProcessingGroups |
+| ProcessingUsers  | ProcessingUsers  |
+| ProcessingRoles  | ProcessingRoles  |
+
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)

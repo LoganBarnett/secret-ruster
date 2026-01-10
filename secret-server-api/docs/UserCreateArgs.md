@@ -1,0 +1,25 @@
+# UserCreateArgs
+
+## Properties
+
+| Name                           | Type                                                                                | Description                                                                                                                                          | Notes      |
+| ------------------------------ | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **ad_guid**                    | Option<**String**>                                                                  | Active Directory unique identifier.                                                                                                                  | [optional] |
+| **display_name**               | **String**                                                                          | The user’s name as displayed in the user interface.                                                                                                  |            |
+| **domain_id**                  | Option<**i32**>                                                                     | If not null, the Active Directory domain ID.                                                                                                         | [optional] |
+| **duo_two_factor**             | Option<**bool**>                                                                    | Whether Duo two-factor authentication is enabled.                                                                                                    | [optional] |
+| **email_address**              | Option<**String**>                                                                  | The user's email address. Used by the system to send reports, access requests, and other notifications.                                              | [optional] |
+| **enabled**                    | Option<**bool**>                                                                    | Whether the user account is enabled. Disabled users are unable to log in and do not consume a user license.                                          | [optional] |
+| **fido2_two_factor**           | Option<**bool**>                                                                    | Whether Duo two-factor authentication is enabled.                                                                                                    | [optional] |
+| **is_application_account**     | Option<**bool**>                                                                    | Whether this is an application account. Application accounts are used for automation, cannot log in using the UI, and do not consume a user license. | [optional] |
+| **oath_two_factor**            | Option<**bool**>                                                                    | Whether OATH two-factor authentication is enabled.                                                                                                   | [optional] |
+| **password**                   | **String**                                                                          | The password used by local accounts to log in.                                                                                                       |            |
+| **radius_two_factor**          | Option<**bool**>                                                                    | Whether RADIUS two-factor authentication is enabled.                                                                                                 | [optional] |
+| **radius_user_name**           | Option<**String**>                                                                  | RADIUS username                                                                                                                                      | [optional] |
+| **two_factor**                 | Option<**bool**>                                                                    | Whether two-factor authentication is enabled.                                                                                                        | [optional] |
+| **unix_authentication_method** | Option<[**models::UnixAuthenticationMethodType**](UnixAuthenticationMethodType.md)> |                                                                                                                                                      | [optional] |
+| **user_name**                  | **String**                                                                          | The unique string identifying this user.                                                                                                             |            |
+
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)

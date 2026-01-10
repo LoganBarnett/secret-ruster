@@ -1,0 +1,19 @@
+# SecretRestrictedArgs
+
+## Properties
+
+| Name                                           | Type               | Description                                                                                                                                                                                                                              | Notes      |
+| ---------------------------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **comment**                                    | Option<**String**> | If the secret requires a comment to view or requires approval to view, a reason for accessing the secret must be provided.                                                                                                               | [optional] |
+| **double_lock_password**                       | Option<**String**> | If the secret is DoubleLocked, this is the DoubleLock password needed to access the secret.                                                                                                                                              | [optional] |
+| **force_check_in**                             | Option<**bool**>   | Force the secret to be checked in, even if checked out by someone else. The user must have the \"Force Check In\" permission.                                                                                                            | [optional] |
+| **include_inactive**                           | Option<**bool**>   | If the secret is deactivated, this must be set to true in order to access the secret. The user must also have the \"View Inactive Secrets\" permission.                                                                                  | [optional] |
+| **new_password**                               | Option<**String**> | New secret password.                                                                                                                                                                                                                     | [optional] |
+| **no_auto_checkout**                           | Option<**bool**>   | Don't check out the secret automatically.                                                                                                                                                                                                | [optional] |
+| **prevent_further_retries_after_max_attempts** | Option<**bool**>   | Prevent further RPC retries after max attempts reached                                                                                                                                                                                   | [optional] |
+| **ticket_number**                              | Option<**String**> | If the secret requires a comment to view or requires approval and a user must provide a help desk a ticket number, this is the ticket number to the help desk request.                                                                   | [optional] |
+| **ticket_system_id**                           | Option<**i32**>    | If the secret requires a comment to view or requires approval and a user must provide a help desk a ticket number, this is the id of the help desk system configured in Secret Server that should be used to validate the ticket number. | [optional] |
+
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
