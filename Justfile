@@ -12,9 +12,11 @@ codegen:
       --enable-post-process-file \
       --generator-name rust \
       --input-spec "{{spec-path}}" \
-      --output secret-server-api
+      --output secret-server-api \
+      --additional-properties=packageLicenseInfo=MIT
   just markdown-format
   just rust-fix-pathbuf-reference
+  just workspace-inherit-dependencies
 
 # Keep as its own `find` step, because `dprint` can do all of the files at once.
 markdown-format:
@@ -33,6 +35,23 @@ rust-fix-pathbuf-reference:
            --in-place \
            's/models::std::path::PathBuf/std::path::PathBuf/g' \
            {} +
+
+# Convert generated Cargo.toml to use workspace inheritance
+workspace-inherit-dependencies:
+  sed --in-place \
+    -e 's/^name = "openapi"/name = "secret-server-api"/' \
+    -e 's/^authors = .*/authors.workspace = true/' \
+    -e 's/^license = .*/license.workspace = true/' \
+    -e 's/^edition = .*/edition.workspace = true/' \
+    -e '/^# Override this license/d' \
+    -e 's/serde = { version = "[^"]*", features = \["derive"\] }/serde = { workspace = true, features = ["derive"] }/' \
+    -e 's/serde_with = { version = "[^"]*", default-features = false, features = \["base64", "std", "macros"\] }/serde_with = { workspace = true }/' \
+    -e 's/serde_json = "[^"]*"/serde_json = { workspace = true }/' \
+    -e 's/serde_repr = "[^"]*"/serde_repr = { workspace = true }/' \
+    -e 's/url = "[^"]*"/url = { workspace = true }/' \
+    -e 's/uuid = { version = "[^"]*", features = \["serde", "v4"\] }/uuid = { workspace = true, features = ["serde", "v4"] }/' \
+    -e 's/reqwest = { version = "[^"]*", default-features = false, features = \["json", "multipart"\] }/reqwest = { workspace = true, features = ["json", "multipart"] }/' \
+    secret-server-api/Cargo.toml
 
 # This is needed to fix the busted Swagger spec.  And yeah I mean Swagger
 # because that's when this was put together.
